@@ -1,5 +1,5 @@
-% ------------- ProblemSet6 OLG in Dynare -------------
-% This is a script created for the Problem Set 6 - OLG that implements the
+
+% This is a script that implements the
 % canonical Diamond OLG Model with perfect foresight and a log utility
 % function.
 %
@@ -13,18 +13,17 @@
 %
 % One period in the model corresponds to 30 years.
 %
-% Note the notation is consistent with the dynare notation, i.e capital is
-% determined at the end of the period (predetermined)
+% The dynare notation is consistent since I use predetermined_variables 
 
 clear;close all; clc;
 
 % -- Model with change in the population growth n --
 % Permanent
-dynare olg_dynare_jd790_perm_chg
+dynare olg_dynare_perm_chg
 path_perm = oo_.endo_simul';
 
 % Temporary
-dynare olg_dynare_jd790_temp_chg
+dynare olg_dynare_temp_chg
 path_temp = oo_.endo_simul';
 
 % path_perm = path_temp;- Useful for debugging only
@@ -128,11 +127,11 @@ hold off
 
 % -- Model change in the TFP A --
 % Permanent
-dynare olg_dynare_jd790_perm_chg_tfp
+dynare olg_dynare_perm_chg_tfp
 path_perm = oo_.endo_simul';
 
 % Temporary
-dynare olg_dynare_jd790_temp_chg_tfp
+dynare olg_dynare_temp_chg_tfp
 path_temp = oo_.endo_simul';
 
 
